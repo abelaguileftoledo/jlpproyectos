@@ -1,0 +1,10 @@
+# SO / editores
+.DS_Store
+Thumbs.db
+*.swp
+.vscode/
+.idea/
+
+# logs
+*.log
+npm-debug.log*
