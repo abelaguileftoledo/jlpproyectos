@@ -793,6 +793,10 @@ body.no-marquee .marquee{display:none}
   .steps{grid-template-columns:1fr}
   .hero-bottom{flex-direction:column;align-items:flex-start}
   .sec-head .t{max-width:100%}
+  /* Fix desbordamiento del hero en móvil */
+  .hero-title{font-size:clamp(28px,8.2vw,46px)}
+  .kicker{letter-spacing:.12em;overflow-wrap:anywhere}
+  .hero-sub{max-width:100%}
 }
 
 /* mobile menu */
@@ -967,10 +971,11 @@ body.no-marquee .marquee{display:none}
         <p class="aside-desc">Envíanos tus datos y te contactaremos a la brevedad.</p>
         <input type="hidden" id="f-cat">
         <form onsubmit="return jlpSubmit(event)">
-          <div class="fld"><input type="text" placeholder=" " required=""><label>Nombre</label></div>
-          <div class="fld"><input type="email" placeholder=" " required=""><label>Email</label></div>
-          <div class="fld"><input type="tel" placeholder=" "><label>Teléfono</label></div>
-          <div class="fld"><textarea rows="2" placeholder=" " required=""></textarea><label>Tu consulta</label></div>
+          <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+          <div class="fld"><input name="nombre" type="text" placeholder=" " required=""><label>Nombre</label></div>
+          <div class="fld"><input name="email" type="email" placeholder=" " required=""><label>Email</label></div>
+          <div class="fld"><input name="telefono" type="tel" placeholder=" "><label>Teléfono</label></div>
+          <div class="fld"><textarea name="mensaje" rows="2" placeholder=" " required=""></textarea><label>Tu consulta</label></div>
           <button type="submit" class="btn aside-btn">Enviar consulta <span class="arr">→</span></button>
         </form>
       </div>
@@ -1160,17 +1165,18 @@ body.no-marquee .marquee{display:none}
         <p class="lead" style="color:#D4D6DA;margin-top:8px">Cuéntanos qué quieres construir. Te respondemos con una primera evaluación sin costo.</p>
         <div class="contact-list">
           <a href="mailto:contacto@jlpproyectos.cl"><span class="k">Email</span><span class="v">contacto@jlpproyectos.cl</span></a>
-          <a href="tel:+56972113958"><span class="k">Teléfono</span><span class="v">+56 9 7211 3958</span></a>
+          <a href="tel:+56967893214"><span class="k">Teléfono</span><span class="v">+56 9 6789 3214</span></a>
           <div class="ci"><span class="k">Oficina</span><span class="v">Isidora Goyenechea 3000, Las Condes, RM</span></div>
           <a href="https://www.jlpproyectos.cl" target="_blank" rel="noopener"><span class="k">Web</span><span class="v">jlpproyectos.cl</span></a>
         </div>
       </div>
       <div class="reveal">
         <form id="cform" onsubmit="return jlpSubmit(event)">
-          <div class="fld"><input id="f-name" type="text" placeholder=" " required=""><label for="f-name">Nombre</label></div>
-          <div class="fld"><input id="f-email" type="email" placeholder=" " required=""><label for="f-email">Email</label></div>
-          <div class="fld"><input id="f-type" type="text" placeholder=" "><label for="f-type">Tipo de proyecto</label></div>
-          <div class="fld"><textarea id="f-msg" rows="4" placeholder=" " required=""></textarea><label for="f-msg">Cuéntanos tu proyecto</label></div>
+          <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+          <div class="fld"><input id="f-name" name="nombre" type="text" placeholder=" " required=""><label for="f-name">Nombre</label></div>
+          <div class="fld"><input id="f-email" name="email" type="email" placeholder=" " required=""><label for="f-email">Email</label></div>
+          <div class="fld"><input id="f-type" name="tipo_proyecto" type="text" placeholder=" "><label for="f-type">Tipo de proyecto</label></div>
+          <div class="fld"><textarea id="f-msg" name="mensaje" rows="4" placeholder=" " required=""></textarea><label for="f-msg">Cuéntanos tu proyecto</label></div>
           <button type="submit" class="btn on-dark">Enviar solicitud <span class="arr">→</span></button>
         </form>
       </div>
@@ -1206,7 +1212,7 @@ body.no-marquee .marquee{display:none}
         <div class="foot-col">
           <h4>Contacto</h4>
           <a href="mailto:contacto@jlpproyectos.cl">contacto@jlpproyectos.cl</a>
-          <a href="tel:+56972113958">+56 9 7211 3958</a>
+          <a href="tel:+56967893214">+56 9 6789 3214</a>
           <a href="#contacto">Isidora Goyenechea 3000, Las Condes</a>
         </div>
       </div>
@@ -1291,10 +1297,29 @@ body.no-marquee .marquee{display:none}
   // Form (demo)
   function jlpSubmit(e){
     e.preventDefault();
-    const btn=e.target.querySelector('button');
-    btn.innerHTML='Solicitud enviada ✓';
-    btn.style.background='#fff';btn.style.color='var(--ink)';btn.style.borderColor='#fff';
-    setTimeout(()=>e.target.reset(),300);
+    const form=e.target;
+    const btn=form.querySelector('button');
+    const original=btn.innerHTML;
+    btn.disabled=true; btn.innerHTML='Enviando\u2026';
+    const data=new FormData(form);
+    data.append('access_key','aba027d2-50a5-4181-985c-75564fa4b47f');
+    data.append('subject','Nueva consulta desde jlpproyectos.cl');
+    data.append('from_name','Web JLP Proyectos');
+    fetch('https://api.web3forms.com/submit',{
+      method:'POST',
+      headers:{'Accept':'application/json'},
+      body:data
+    }).then(r=>r.json()).then(json=>{
+      if(json.success){
+        btn.innerHTML='Solicitud enviada \u2713';
+        btn.style.background='#fff'; btn.style.color='var(--ink)'; btn.style.borderColor='#fff';
+        setTimeout(()=>{ form.reset(); btn.disabled=false; btn.removeAttribute('style'); btn.innerHTML=original; },2800);
+      } else { throw new Error(json.message||'error'); }
+    }).catch(()=>{
+      btn.innerHTML='Error, reintenta';
+      btn.disabled=false;
+      setTimeout(()=>{ btn.innerHTML=original; },2800);
+    });
     return false;
   }
 </script>
@@ -1308,4 +1333,13 @@ body.no-marquee .marquee{display:none}
 
 
 
+<style id="jlp-wa-style">
+.wa-float{position:fixed;right:22px;bottom:22px;width:58px;height:58px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 22px rgba(0,0,0,.28);z-index:9999;transition:transform .2s ease,box-shadow .2s ease;}
+.wa-float:hover{transform:scale(1.08);box-shadow:0 9px 28px rgba(0,0,0,.34);}
+.wa-float svg{width:33px;height:33px;fill:#fff;}
+@media(max-width:480px){.wa-float{right:16px;bottom:16px;width:54px;height:54px;}}
+</style>
+<a class="wa-float" href="https://wa.me/56967893214?text=Hola%20JLP%20Proyectos%2C%20me%20gustar%C3%ADa%20cotizar%20un%20proyecto." target="_blank" rel="noopener" aria-label="Escribenos por WhatsApp">
+  <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M16.003 3C9.38 3 4 8.38 4 15.003c0 2.123.555 4.197 1.61 6.026L4 29l8.16-1.58a11.95 11.95 0 0 0 3.843.63h.003C22.626 28.05 28 22.67 28 16.047 28 9.42 22.626 3 16.003 3zm0 21.84h-.002a9.86 9.86 0 0 1-5.026-1.377l-.36-.214-3.74.724.74-3.65-.235-.374a9.83 9.83 0 0 1-1.51-5.27c0-5.45 4.44-9.89 9.9-9.89 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.9 6.99c0 5.46-4.44 9.9-9.9 9.9zm5.43-7.41c-.297-.15-1.758-.868-2.03-.967-.272-.099-.47-.148-.668.15-.198.297-.767.967-.94 1.165-.173.198-.347.223-.644.074-.297-.15-1.255-.462-2.39-1.475-.883-.788-1.48-1.76-1.653-2.057-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.297-.496.099-.198.05-.372-.025-.521-.074-.149-.668-1.611-.916-2.206-.241-.58-.486-.5-.668-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.073.149.198 2.095 3.2 5.076 4.487.71.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.247-.694.247-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>
+</a>
 </body></html>
