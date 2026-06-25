@@ -624,8 +624,8 @@ p.lead{font-size:clamp(18px,2vw,23px);line-height:1.45;color:var(--ink);max-widt
 .aside-head2{display:flex;align-items:baseline;justify-content:space-between;gap:10px;padding:17px 22px 15px;border-bottom:1px solid var(--line-dark)}
 .aside-title{font-family:var(--font-display);font-weight:800;font-size:18px;letter-spacing:-.01em;color:#fff;line-height:1}
 .aside-hint{font-family:var(--font-mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
-.aside-cats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line-dark);border-bottom:1px solid var(--line-dark)}
-.cat{background:#141B24;border:0;color:#fff;display:flex;flex-direction:column;align-items:center;gap:8px;padding:11px 6px;cursor:pointer;transition:background .25s,box-shadow .25s;box-shadow:inset 0 -2px 0 transparent}
+.aside-cats{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:1fr;gap:1px;background:var(--line-dark);border-bottom:1px solid var(--line-dark)}
+.cat{background:#141B24;border:0;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:11px 6px;cursor:pointer;transition:background .25s,box-shadow .25s;box-shadow:inset 0 -2px 0 transparent}
 .cat svg{width:23px;height:23px;color:#fff;transition:color .25s,transform .25s}
 .cat span{font-family:var(--font-mono);font-size:9px;letter-spacing:.03em;text-transform:uppercase;color:#9398A1;text-align:center;line-height:1.25;transition:color .25s}
 .cat:hover{background:#1B242E}
@@ -1021,7 +1021,7 @@ body.no-marquee .marquee{display:none}
     </div>
     <div class="about">
       <div class="about-media reveal">
-        <img class="slot-img" src="assets/img/about.webp" alt="Taller de estructuras metálicas — JLP Proyectos, Quilicura" loading="lazy" decoding="async">
+        <img class="slot-img" src="assets/img/about.webp" alt="Montaje de estructura metálica — JLP Proyectos" loading="lazy" decoding="async">
         <div class="tagblock">
           <div class="big">Las Condes,<br>Santiago de Chile</div>
           <div class="sm">Ingeniería · Construcción · Montaje</div>
