@@ -1,0 +1,12 @@
+# Forzar dominio canónico con www (Cloudflare Pages)
+https://jlpproyectos.cl/*   https://www.jlpproyectos.cl/:splat   301!
+
+# Redirección de URLs antiguas (sitio multipágina) al one-page actual
+/nosotros     /#nosotros    301
+/nosotros/    /#nosotros    301
+/servicios    /#servicios   301
+/servicios/   /#servicios   301
+/contacto     /#contacto    301
+/contacto/    /#contacto    301
+/cdf-fsh      /#proyectos   301
+/cdf-fsh/     /#proyectos   301
