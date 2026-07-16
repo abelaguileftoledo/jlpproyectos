@@ -2,8 +2,8 @@
 <html lang="es"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JLP Proyectos — Ingeniería &amp; Construcción</title>
-<meta name="description" content="JLP Proyectos · Ingeniería que conecta. Soluciones que transforman. Obras civiles especializadas en proyectos mineros, en todo Chile.">
+<title>JLP Proyectos | Empresa Constructora de Obras Civiles en Chile</title>
+<meta name="description" content="Empresa constructora especializada en obras civiles: túnel liner, hincado de tuberías, energía solar y minería. Más de 15 años de experiencia en todo Chile.">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -22,7 +22,7 @@
       "description": "Empresa chilena de ingeniería y construcción especializada en obras civiles para los sectores de energía, minería e industria. Más de 15 años ejecutando infraestructura crítica a lo largo de todo Chile.",
       "slogan": "Obras y proyectos que conectan. Soluciones que transforman.",
       "email": "contacto@jlpproyectos.cl",
-      "telephone": "+56967893214",
+      "telephone": "+56972113958",
       "areaServed": {
         "@type": "Country",
         "name": "Chile"
@@ -46,14 +46,23 @@
         "addressRegion": "Región Metropolitana",
         "addressCountry": "CL"
       },
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+56967893214",
-        "email": "contacto@jlpproyectos.cl",
-        "contactType": "ventas",
-        "areaServed": "CL",
-        "availableLanguage": ["es"]
-      },
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+56972113958",
+          "email": "contacto@jlpproyectos.cl",
+          "contactType": "ventas",
+          "areaServed": "CL",
+          "availableLanguage": ["es"]
+        },
+        {
+          "@type": "ContactPoint",
+          "telephone": "+56967893214",
+          "contactType": "customer support",
+          "areaServed": "CL",
+          "availableLanguage": ["es"]
+        }
+      ],
       "location": [
         {
           "@type": "Place",
@@ -89,7 +98,7 @@
           { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Energía y BESS", "description": "Obras civiles y montaje para parques solares y eólicos, y estructuras para almacenamiento de energía." } }
         ]
       },
-      "sameAs": []
+      "sameAs": ["https://www.google.com/maps?cid=10643816391590481430"]
     },
     {
       "@type": "WebSite",
@@ -615,8 +624,8 @@ p.lead{font-size:clamp(18px,2vw,23px);line-height:1.45;color:var(--ink);max-widt
 .aside-head2{display:flex;align-items:baseline;justify-content:space-between;gap:10px;padding:17px 22px 15px;border-bottom:1px solid var(--line-dark)}
 .aside-title{font-family:var(--font-display);font-weight:800;font-size:18px;letter-spacing:-.01em;color:#fff;line-height:1}
 .aside-hint{font-family:var(--font-mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
-.aside-cats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line-dark);border-bottom:1px solid var(--line-dark)}
-.cat{background:#141B24;border:0;color:#fff;display:flex;flex-direction:column;align-items:center;gap:8px;padding:11px 6px;cursor:pointer;transition:background .25s,box-shadow .25s;box-shadow:inset 0 -2px 0 transparent}
+.aside-cats{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:1fr;gap:1px;background:var(--line-dark);border-bottom:1px solid var(--line-dark)}
+.cat{background:#141B24;border:0;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:11px 6px;cursor:pointer;transition:background .25s,box-shadow .25s;box-shadow:inset 0 -2px 0 transparent}
 .cat svg{width:23px;height:23px;color:#fff;transition:color .25s,transform .25s}
 .cat span{font-family:var(--font-mono);font-size:9px;letter-spacing:.03em;text-transform:uppercase;color:#9398A1;text-align:center;line-height:1.25;transition:color .25s}
 .cat:hover{background:#1B242E}
@@ -731,6 +740,11 @@ section{position:relative}
 
 /* ---- Clientes ---- */
 .clients{padding:clamp(50px,7vw,90px) 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.clients-marquee{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)}
+.cm-track{display:flex;width:max-content;align-items:center;animation:cmscroll 34s linear infinite}
+.cm-track .cm-item{font-family:var(--font-display);font-weight:800;font-size:clamp(17px,2.3vw,26px);color:var(--steel);white-space:nowrap;opacity:.9;margin-right:clamp(40px,6vw,80px)}
+.clients-marquee:hover .cm-track{animation-play-state:paused}
+@keyframes cmscroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 .client-row{display:flex;flex-wrap:wrap;align-items:center;gap:clamp(28px,5vw,64px);justify-content:center}
 .client-row .c{font-family:var(--font-display);font-weight:800;font-size:clamp(20px,2.4vw,30px);color:#A3AEBE;letter-spacing:-.01em;transition:color .3s}
 .client-row .c:hover{color:var(--ink)}
@@ -842,12 +856,12 @@ body.no-marquee .marquee{display:none}
   <meta property="og:type" content="website">
   <meta property="og:locale" content="es_CL">
   <meta property="og:site_name" content="JLP Proyectos">
-  <meta property="og:title" content="JLP Proyectos — Ingeniería &amp; Construcción">
+  <meta property="og:title" content="JLP Proyectos | Empresa Constructora de Obras Civiles en Chile">
   <meta property="og:description" content="Obras civiles especializadas para proyectos mineros, energía e industria en todo Chile. Ingeniería que conecta, soluciones que transforman.">
   <meta property="og:url" content="https://www.jlpproyectos.cl/">
   <meta property="og:image" content="https://www.jlpproyectos.cl/assets/img/hero.webp">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="JLP Proyectos — Ingeniería &amp; Construcción">
+  <meta name="twitter:title" content="JLP Proyectos | Empresa Constructora de Obras Civiles en Chile">
   <meta name="twitter:description" content="Obras civiles especializadas para proyectos mineros, energía e industria en todo Chile.">
   <meta name="twitter:image" content="https://www.jlpproyectos.cl/assets/img/hero.webp">
   <style>
@@ -975,6 +989,7 @@ body.no-marquee .marquee{display:none}
         <form onsubmit="return jlpSubmit(event)">
           <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
           <div class="fld"><input name="nombre" type="text" placeholder=" " required=""><label>Nombre</label></div>
+          <div class="fld"><input name="empresa" type="text" placeholder=" " required=""><label>Empresa</label></div>
           <div class="fld"><input name="email" type="email" placeholder=" " required=""><label>Email</label></div>
           <div class="fld"><input name="telefono" type="tel" placeholder=" "><label>Teléfono</label></div>
           <div class="fld"><textarea name="mensaje" rows="2" placeholder=" " required=""></textarea><label>Tu consulta</label></div>
@@ -1006,7 +1021,7 @@ body.no-marquee .marquee{display:none}
     </div>
     <div class="about">
       <div class="about-media reveal">
-        <img class="slot-img" src="assets/img/about.webp" alt="Taller de estructuras metálicas — JLP Proyectos, Quilicura" loading="lazy" decoding="async">
+        <img class="slot-img" src="assets/img/about.webp" alt="Montaje de estructura metálica — JLP Proyectos" loading="lazy" decoding="async">
         <div class="tagblock">
           <div class="big">Las Condes,<br>Santiago de Chile</div>
           <div class="sm">Ingeniería · Construcción · Montaje</div>
@@ -1083,7 +1098,7 @@ body.no-marquee .marquee{display:none}
     <div class="sec-head reveal">
       <div class="t">
         <span class="kicker">03 — Portafolio</span>
-        <h2 class="h-sec" style="margin-top:18px">Obras que ya están<br>de <span class="italic accent">pie.</span></h2>
+        <h2 class="h-sec" style="margin-top:18px">Algunas obras<br><span class="italic accent">destacadas.</span></h2>
       </div>
       <a href="#contacto" class="btn ghost">Iniciar el tuyo <span class="arr">→</span></a>
     </div>
@@ -1128,16 +1143,16 @@ body.no-marquee .marquee{display:none}
   <div class="wrap">
     <div class="sec-head reveal">
       <div class="t">
-        <span class="kicker">04 — Cómo trabajamos</span>
+        <span class="kicker">04 — Metodología aplicada</span>
         <h2 class="h-sec" style="margin-top:18px">Un método, cuatro<br><span class="italic accent">etapas.</span></h2>
       </div>
       <span class="idx">/ 04</span>
     </div>
     <div class="steps reveal">
-      <div class="step"><div class="sn">01</div><div><div class="sh">Diagnóstico</div><div class="sp">Entendemos el terreno, el presupuesto y los objetivos. Factibilidad técnica y normativa.</div></div></div>
-      <div class="step"><div class="sn">02</div><div><div class="sh">Diseño &amp; Cálculo</div><div class="sp">Arquitectura, estructura y especialidades coordinadas en un único modelo BIM.</div></div></div>
-      <div class="step"><div class="sn">03</div><div><div class="sh">Construcción</div><div class="sp">Ejecución con administración directa, control de avance, costos y calidad en obra.</div></div></div>
-      <div class="step"><div class="sn">04</div><div><div class="sh">Entrega</div><div class="sp">Recepción municipal, regularizaciones y entrega de tu obra lista para operar.</div></div></div>
+      <div class="step"><div class="sn">01</div><div><div class="sh">Planificación</div><div class="sp">Definimos alcance, plazos, presupuesto y factibilidad técnica y normativa antes de iniciar la obra.</div></div></div>
+      <div class="step"><div class="sn">02</div><div><div class="sh">Ejecución</div><div class="sp">Construimos con administración directa y equipos propios, coordinando cada especialidad en terreno.</div></div></div>
+      <div class="step"><div class="sn">03</div><div><div class="sh">Control</div><div class="sp">Seguimiento continuo de avance, costos, calidad y seguridad, con reportes claros en cada etapa.</div></div></div>
+      <div class="step"><div class="sn">04</div><div><div class="sh">Entrega</div><div class="sp">Recepción, regularizaciones y entrega de la obra lista para operar, con respaldo posterior.</div></div></div>
     </div>
   </div>
 </section>
@@ -1146,12 +1161,8 @@ body.no-marquee .marquee{display:none}
 <section class="clients">
   <div class="wrap">
     <div style="text-align:center;margin-bottom:38px" class="reveal"><span class="kicker" style="justify-content:center">Confían en nosotros</span></div>
-    <div class="client-row reveal">
-      <span class="c">Enel Green Power</span>
-      <span class="c">Atlas Renewables</span>
-      <span class="c">Enel Generación</span>
-      <span class="c">Johnson Controls</span>
-      <span class="c">Gobierno Regional</span>
+    <div class="clients-marquee reveal" aria-hidden="false">
+      <div class="cm-track"><span class="cm-item">Metlen Energy &amp; Metals</span><span class="cm-item">Grammer Solar</span><span class="cm-item">Atlas Renewable Energy</span><span class="cm-item">TCI Gecomp</span><span class="cm-item">CJR Renewables</span><span class="cm-item">Enel Green Power</span><span class="cm-item">Essbio</span><span class="cm-item">Metro de Santiago</span><span class="cm-item">Ingevec</span><span class="cm-item">Nuevosur</span><span class="cm-item">Ejército de Chile</span><span class="cm-item">Besalco</span><span class="cm-item">ENAP</span><span class="cm-item">Mallplaza</span><span class="cm-item">Stitchkin Inmobiliaria</span><span class="cm-item">ESVAL</span><span class="cm-item">VIVO</span><span class="cm-item">Rhona</span><span class="cm-item">Negratín</span><span class="cm-item">Aguas Magallanes</span><span class="cm-item">Johnson Controls</span><span class="cm-item">Mutual de Seguridad</span><span class="cm-item">ASMAR</span><span class="cm-item">BHP Cerro Colorado</span><span class="cm-item">Las Condes</span><span class="cm-item">Metlen Energy &amp; Metals</span><span class="cm-item">Grammer Solar</span><span class="cm-item">Atlas Renewable Energy</span><span class="cm-item">TCI Gecomp</span><span class="cm-item">CJR Renewables</span><span class="cm-item">Enel Green Power</span><span class="cm-item">Essbio</span><span class="cm-item">Metro de Santiago</span><span class="cm-item">Ingevec</span><span class="cm-item">Nuevosur</span><span class="cm-item">Ejército de Chile</span><span class="cm-item">Besalco</span><span class="cm-item">ENAP</span><span class="cm-item">Mallplaza</span><span class="cm-item">Stitchkin Inmobiliaria</span><span class="cm-item">ESVAL</span><span class="cm-item">VIVO</span><span class="cm-item">Rhona</span><span class="cm-item">Negratín</span><span class="cm-item">Aguas Magallanes</span><span class="cm-item">Johnson Controls</span><span class="cm-item">Mutual de Seguridad</span><span class="cm-item">ASMAR</span><span class="cm-item">BHP Cerro Colorado</span><span class="cm-item">Las Condes</span></div>
     </div>
   </div>
 </section>
@@ -1164,18 +1175,20 @@ body.no-marquee .marquee{display:none}
       <div class="reveal">
         <span class="kicker on-dark">05 — Hablemos</span>
         <h2 class="h-sec" style="margin-top:18px;color:#fff">¿Tienes un proyecto<br>en <span class="italic accent">mente?</span></h2>
-        <p class="lead" style="color:#D4D6DA;margin-top:8px">Cuéntanos qué quieres construir. Te respondemos con una primera evaluación sin costo.</p>
+        <p class="lead" style="color:#D4D6DA;margin-top:8px">Indícanos qué necesitas cotizar, te contestamos a la brevedad.</p>
         <div class="contact-list">
           <a href="mailto:contacto@jlpproyectos.cl"><span class="k">Email</span><span class="v">contacto@jlpproyectos.cl</span></a>
+          <a href="tel:+56972113958"><span class="k">Teléfono</span><span class="v">+56 9 7211 3958</span></a>
           <a href="tel:+56967893214"><span class="k">Teléfono</span><span class="v">+56 9 6789 3214</span></a>
           <div class="ci"><span class="k">Oficina</span><span class="v">Isidora Goyenechea 3000, Las Condes, RM</span></div>
-          <a href="https://www.jlpproyectos.cl" target="_blank" rel="noopener"><span class="k">Web</span><span class="v">jlpproyectos.cl</span></a>
+          <a href="https://www.jlpproyectos.cl" target="_blank" rel="noopener"><span class="k">Web</span><span class="v">www.jlpproyectos.cl</span></a>
         </div>
       </div>
       <div class="reveal">
         <form id="cform" onsubmit="return jlpSubmit(event)">
           <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
           <div class="fld"><input id="f-name" name="nombre" type="text" placeholder=" " required=""><label for="f-name">Nombre</label></div>
+          <div class="fld"><input id="f-empresa" name="empresa" type="text" placeholder=" " required=""><label for="f-empresa">Empresa</label></div>
           <div class="fld"><input id="f-email" name="email" type="email" placeholder=" " required=""><label for="f-email">Email</label></div>
           <div class="fld"><input id="f-type" name="tipo_proyecto" type="text" placeholder=" "><label for="f-type">Tipo de proyecto</label></div>
           <div class="fld"><textarea id="f-msg" name="mensaje" rows="4" placeholder=" " required=""></textarea><label for="f-msg">Cuéntanos tu proyecto</label></div>
@@ -1214,6 +1227,7 @@ body.no-marquee .marquee{display:none}
         <div class="foot-col">
           <h4>Contacto</h4>
           <a href="mailto:contacto@jlpproyectos.cl">contacto@jlpproyectos.cl</a>
+          <a href="tel:+56972113958">+56 9 7211 3958</a>
           <a href="tel:+56967893214">+56 9 6789 3214</a>
           <a href="#contacto">Isidora Goyenechea 3000, Las Condes</a>
         </div>
@@ -1304,6 +1318,10 @@ body.no-marquee .marquee{display:none}
     const original=btn.innerHTML;
     btn.disabled=true; btn.innerHTML='Enviando\u2026';
     const data=new FormData(form);
+    if(form.closest('.aside-form')){
+      const c=document.getElementById('f-cat'); if(c&&c.value) data.append('Tipo de obra',c.value);
+      const r=document.getElementById('f-region'); if(r&&r.value && !r.disabled) data.append('Región',r.value);
+    }
     data.append('access_key','aba027d2-50a5-4181-985c-75564fa4b47f');
     data.append('subject','Nueva consulta desde jlpproyectos.cl');
     data.append('from_name','Web JLP Proyectos');
