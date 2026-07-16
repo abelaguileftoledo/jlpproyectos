@@ -1,5 +1,4 @@
-﻿# Redireccion de URLs antiguas (sitio multipagina) al one-page actual
-/nosotros     /#nosotros    301
+﻿/nosotros     /#nosotros    301
 /nosotros/    /#nosotros    301
 /servicios    /#servicios   301
 /servicios/   /#servicios   301
